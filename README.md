@@ -44,5 +44,11 @@ docker run -p 8080:8080 receipt-processor
 The service will be available at `http://localhost:8080`.
 
 
-### Sample Requests (use sample-request.http file provided)
-You can use IntelliJ or VS Code REST Client extension to test this.
+### Testing Sample Requests (use `sample-request.http` file provided)
+
+You can use **IntelliJ HTTP Client** or **VS Code REST Client** extension to test this.  
+The `sample-request.http` file includes examples for the two endpoints:
+
+- `POST /receipts/process` – To submit a receipt and get a unique ID.
+- `GET /receipts/{id}/points` – To retrieve the points awarded for that receipt.
+
