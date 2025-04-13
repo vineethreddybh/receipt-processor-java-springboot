@@ -2,6 +2,9 @@
 
 A simple receipt processing API that awards points based on a set of rules defined (https://github.com/fetch-rewards/receipt-processor-challenge#rules). Built with Java, Spring Boot, and Docker.
 
+**Note:**
+- The code related to awarding points based on a set of rules is in `ReceiptService.java`
+
 ---
 
 ## Features
@@ -17,8 +20,9 @@ Make sure the following are installed on your machine:
 
 - **Java 17** 👉 [Download Here](https://www.oracle.com/java/technologies/javase/jdk17-archive-downloads.html)  
 - **Maven** 👉 [Download Here](https://maven.apache.org/download.cgi)  
-- **Spring Boot** 👉 Generate project via [Spring Initializr](https://start.spring.io)  
+- **Spring Boot** 👉 [Download Here](https://start.spring.io)  
 - **Docker** 👉 [Download Docker Desktop](https://www.docker.com/products/docker-desktop/)
+- **VSCode** 👉 [Download Here](https://code.visualstudio.com/download)
 
 ## How to Build & Run using Docker
 
@@ -40,13 +44,14 @@ docker build -t receipt-processor .
 ```bash
 docker run -p 8080:8080 receipt-processor
 ```
+Verify that you see the Docker container running in the _Docker Desktop_ app
 
 The service will be available at `http://localhost:8080`.
 
 
 ### Testing Sample Requests (use `sample-request.http` file provided)
 
-You can use **IntelliJ HTTP Client** or **VS Code REST Client** extension to test this.  
+You can use **VS Code REST Client** extension to test this.  
 The `sample-request.http` file includes examples for the two endpoints:
 
 - `POST /receipts/process` – To submit a receipt and get a unique ID.
