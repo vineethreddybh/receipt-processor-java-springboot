@@ -1,0 +1,31 @@
+### POST /receipts/process
+POST http://localhost:8080/receipts/process
+Content-Type: application/json
+
+{
+  "retailer": "M&M Corner Market",
+  "purchaseDate": "2022-03-20",
+  "purchaseTime": "14:33",
+  "items": [
+    {
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    },{
+      "shortDescription": "Gatorade",
+      "price": "2.25"
+    }
+  ],
+  "total": "9.00"
+}
+
+
+### Copy the ID from the above response and replace {id} below
+### GET /receipts/{id}/points
+GET http://localhost:8080/receipts/d336ef0c-8855-4ca2-bcf1-3395b78c6b1a/points
+Content-Type: application/json
