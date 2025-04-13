@@ -57,3 +57,32 @@ The `sample-request.http` file includes examples for the two endpoints:
 - `POST /receipts/process` – To submit a receipt and get a unique ID.
 - `GET /receipts/{id}/points` – To retrieve the points awarded for that receipt.
 
+### Testing Sample Requests using Curl
+
+**1. POST a Receipt:**
+Use this curl command to submit a sample receipt:
+```bash
+curl -v -H "Content-Type: application/json" -d '{
+  "retailer": "Target",
+  "purchaseDate": "2022-01-01",
+  "purchaseTime": "13:01",
+  "items": [
+    { "shortDescription": "Mountain Dew 12PK", "price": "6.49" },
+    { "shortDescription": "Emils Cheese Pizza", "price": "12.25" },
+    { "shortDescription": "Knorr Creamy Chicken", "price": "1.26" },
+    { "shortDescription": "Doritos Nacho Cheese", "price": "3.35" },
+    { "shortDescription": "   Klarbrunn 12-PK 12 FL OZ  ", "price": "12.00" }
+  ],
+  "total": "35.35"
+}' -X POST http://localhost:8080/receipts/process
+```
+**Expected Response in json**
+```{ "id": "1c23395b-7b6e-47bf-887c-f8e7608c809c" }```
+
+**2. GET Points for a Receipt:**
+Use the ID received in the POST response in the URL path below:
+```bash
+curl -v -X GET http://localhost:8080/receipts/1c23395b-7b6e-47bf-887c-f8e7608c809c/points
+```
+**Expected Response in json**
+```{ "points": "28" }```
