@@ -27,5 +27,5 @@ Content-Type: application/json
 
 ### Copy the ID from the above response and replace {id} below
 ### GET /receipts/{id}/points
-GET http://localhost:8080/receipts/d336ef0c-8855-4ca2-bcf1-3395b78c6b1a/points
+GET http://localhost:8080/receipts/21028b63-ec36-4583-8aa7-dcd7414b2677/points
 Content-Type: application/json
